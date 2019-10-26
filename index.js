@@ -27,13 +27,13 @@ app.use('/api/nottodo',nottodoRoute);
 app.use('/api/products',productRoute);
 app.use('/api/shopping',shoppingRoute);
 
-if(process.env.NODE_ENV==='production'){
+//if(process.env.NODE_ENV==='production'){
 //the 'catchall' hander :for any request that doesn't match the code above, send back react's index.html file
 app.use(express.static(path.join(__dirname,"client/build")));
 app.get('*',(req,res)=>{
     res.sendFile(path.resolve(__dirname,"client","build","index.html"))
 })
-}
+//}
    
 
 const port=process.env.PORT||5000;
