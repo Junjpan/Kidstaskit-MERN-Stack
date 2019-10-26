@@ -15,9 +15,11 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 mongoose.set('useCreateIndex',true);
-mongoose.connect(process.env.URL,{useNewUrlParser:true,useUnifiedTopology:true},()=>{
-console.log('Connected to MongoDB...')
+mongoose.connect(process.env.URL,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
+if(err){console.log(err)}
+    console.log('Connected to MongoDB...')
 })
+
 
 
 app.use('/api/',userRoute);
