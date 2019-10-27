@@ -34,7 +34,7 @@ class Navbar extends Component {
             <div>          
                 <ul style={{ float: "left" }} >
                 < img src={logo} style={{ height: "100px", width: "100px", marginRight: "30px", verticalAlign: "text-top" }} alt="logo" />
-                    <li className="title">Fun List For Kids ?!</li>
+                    <li className="title">KIDS TASK IT</li>
                     {this.props.info.parentslogin?<li><Link to="/user" className="link">User |</Link> </li>:null}                    
                     <li><Link to="/todo" className="link">To Do List |</Link> </li> 
                     <li><Link to="/nottodo" className="link">Not To Do List |</Link></li>

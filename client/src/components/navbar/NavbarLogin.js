@@ -19,7 +19,7 @@ const NavbarLogin=()=>{
          <div>
         <ul style={{float:"left"}} >  
             < img src={logo} style={{ height: "100px", width: "100px" ,marginRight:"30px", verticalAlign:"text-top"}} alt="logo" />
-                <li className="title" >Fun List For Kids ?!</li>                
+                <li className="title" >KIDS TASK IT</li>                
                 <li><Link to="/login" className="link">Login |</Link> </li>
                 <li><Link to="/register" className="link">Set Up An Account |</Link></li>
                 <li><Link to="/aboutus" className="link">About Us |</Link></li>

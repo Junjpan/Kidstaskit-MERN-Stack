@@ -84,6 +84,8 @@ async  pickKid(e) {
 
         return (
             <div >
+                <br/>
+                <br/>
                 <h1 className="title">Not Todo List</h1>
                 <div style={{marginLeft: "50px"}}><DatePicker className="calendar1" selected={this.state.date} onChange={this.handleChange} /></div><br/>
                 <div>  
