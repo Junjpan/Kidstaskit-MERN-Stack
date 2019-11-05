@@ -107,7 +107,7 @@ export class Report extends Component {
     d3Panel = () => {
         const { kidId } = this.state;
         if (kidId === '') {
-            this.setState({ message: "You didn't pick the kid's name yet." });
+            this.setState({ message: "You haven't selected your child's name." });
             this.stopMsg();
         } else {
             this.setState({ d3Panel: true })
@@ -159,7 +159,7 @@ export class Report extends Component {
         this.setState({ searchStatus: true })
         const { kidId, startdate, enddate } = this.state;
         if (kidId === "") {
-            this.setState({ message: "You didn't pick the kid's name yet." });
+            this.setState({ message: "You haven't selected your child's name." });
         } else {
             this.getSum(kidId);
             this.getNottodoSum(kidId);
@@ -219,11 +219,11 @@ export class Report extends Component {
         svg.append('text')
             .attr('x', "5%")
             .attr("y", "5%")
-            .text(`${this.state.kid} Behavior Progression Bar in the past 30 days`);
+            .text(`${this.state.kid} Behavior Progression Bar for the last 30 days`);
         const yGroup = svg.append('g')
-            .attr("transform", "translate(150,50)") //set the yaxis starting location
+            .attr("transform", "translate(50,50)") //set the yaxis starting location
         const xGroup = svg.append('g')
-            .attr("transform", "translate(150,450)"); //set the xaxis starting locaiton
+            .attr("transform", "translate(50,450)"); //set the xaxis starting locaiton
         var newArray = this.state.todo30daysresult.map((a) => {
             return a._id = new Date(`${a._id.month}/${a._id.dayOfMonth}/${a._id.year}`)
         })//use map also mutate the state of todo30daysresult
@@ -293,13 +293,13 @@ export class Report extends Component {
         const svg = d3.select(node)
             .style("background", "black")
         const xGroup = svg.append('g')
-            .attr("transform", "translate(150,50)");
+            .attr("transform", "translate(50,50)");
         const yGroup = svg.append('g')
-            .attr("transform", "translate(150,50)");
+            .attr("transform", "translate(50,50)");
         svg.append('text')
             .attr("x", "75%")
             .attr("y", "90%")
-            .text(`${this.state.kid} Complaint Report`)
+            .text(`${this.state.kid}'s Complaint Report`)
             .style('fill', "white")
 
         const minDate = d3.min(newItems);
@@ -453,7 +453,7 @@ export class Report extends Component {
                                         return (<li className="report_li" key={index}><Link to={`/report/${this.state.kidsId[index]}`} className="link" onClick={() => this.clickOnKid(this.state.kidsId[index], kid)}>{kid}</Link></li>)
                                     })}
                                 </ul>
-                                <p className="normal" style={{ color: "white", fontSize: "15px", width: "300px", margin: "auto", }}>**Please make sure to click on the kid's name even there are only one kid in the list</p>
+                                <p className="normal" style={{ color: "white", fontSize: "15px", width: "300px", margin: "auto", }}>**Please click your child's name even if you only have one kid.</p>
                             </div>
                         )}
                     </Motion>
@@ -466,12 +466,12 @@ export class Report extends Component {
                                     <label>Search By Date:</label>
                                     <button className="search_button" onClick={this.search}><FontAwesomeIcon icon={faSearch} size="1x" style={{ color: "white", marginRight: "15px", verticalAlign: "center" }} />Search</button>
                                     <button className="search_button" onClick={this.nottodo}><FontAwesomeIcon icon={faThumbsDown} size="1x" style={{ color: "red", marginRight: "15px", verticalAlign: "center" }} />Include Nottodo</button><br />
-                                    <span>Begin With:&nbsp;</span><DatePicker className="calendar" selected={this.state.startdate} onChange={this.handleChangeStartDate} />
+                                    <span>Start With:&nbsp;</span><DatePicker className="calendar" selected={this.state.startdate} onChange={this.handleChangeStartDate} />
                                     <span>End with: &nbsp;</span><DatePicker className="calendar" selected={this.state.enddate} onChange={this.handleChangeEndDate} />
                                 </div>
                                 <hr />
                                 <button onClick={this.d3Panel}>Visualize Data with a Bar Chart</button>
-                                <p style={{ color: "red", marginLeft: "10px", textAlign: "center", fontSize: "15px" }}>**Note: You only can compare the data in the past 30 days</p>
+                                <p style={{ color: "red", marginLeft: "10px", textAlign: "center", fontSize: "15px" }}>**Note: data is only comparable for the last 30 days</p>
                             </div>
                         )}
                     </Motion>
@@ -483,12 +483,12 @@ export class Report extends Component {
                                         <button onClick={this.closeNottodo}>Close</button>
                                         <label style={{ marginTop: "80px" }}>Report of not to do:</label>
                                     </div>
-                                    <p className="note">Note: To be able to receive the report of not to do you need to select the kid's name and pick the date and press the search button.</p>
+                                    <p className="note">Note: In order to receive the report of not to do, select the child's name and day of which you want your report. Then Click Search button.</p>
                                     <div>{currentNottodoPageList.map((nottodo, index) => {
                                         return (<div key={index}><p>{index + 1}.&nbsp;<span>{getdate(nottodo.date)}</span>&nbsp;{nottodo.title}&nbsp;<span style={{ color: 'red' }}>{nottodo.points} points</span></p><hr /></div>)
                                     })}</div>
                                 </div>
-                                {this.state.currentpage === nottodomax ? (<div>Total minus points are:<span style={{ color: "red" }}>{this.state.nottodosum}</span> points</div>) : null}
+                                {this.state.currentpage === nottodomax ? (<div>You have lost <span style={{ color: "red" }}>{this.state.nottodosum}</span> points in total.</div>) : null}
                                 <Pagination totallist={this.state.nottodosresults.length} paginate={this.paginate} />
                             </div>
                         )}
@@ -510,8 +510,8 @@ export class Report extends Component {
                                 <tr>
                                     <th>Date</th>
                                     <th>Description</th>
-                                    <th>Target Times</th>
-                                    <th>Finished Times</th>
+                                    <th>Target Time</th>
+                                    <th>Finished Time</th>
                                     <th>Target Points</th>
                                     <th>Score</th>
                                     <th>Completed</th>

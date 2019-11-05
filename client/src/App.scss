@@ -202,10 +202,8 @@ img{
    width:40%;
    font-size:20px;
    font-family:$commonfont;
-   color:rgb(12, 19, 43);
-   padding:10px;
-  
-  
+   color:black;
+   padding:10px; 
 }
 
 .aboutBackgroundImage{
@@ -215,6 +213,7 @@ img{
     background-size:100% 70%;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    
 
 }
 
@@ -441,8 +440,20 @@ img{
         font-family:$commonfont;
         border:3px solid rgb(39, 63, 71);
     }
+
+     .addRule_buttons{      
+         @media screen and (min-width:1000px){
+            width: 150px;
+             float:right
+         }
+         @media screen and (max-width:1000px){
+            display:flex;
+           justify-content:center;
+}
+     }
+   
     .button{
-        width:120px;
+        width:100px;
         height:50px;
         font-family:$commonfont;
         margin:25px auto auto 25px;
@@ -525,6 +536,7 @@ img{
     width:50%;
     font-family: cursive;
     font-size:17px;
+    min-height:80vh;
 }
 
 .d3_button{

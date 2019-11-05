@@ -33,9 +33,9 @@ _isMounted=false;
        axios.get('/api/nottodo/' + loginkidid)
             .then((res) => {
                 if(res.data.nottodos.length===0){
-                    this.setState({message:`Great job ${loginkid}, so far you didn't receive any minus points today!`})
+                    this.setState({message:`Great job ${loginkid}, so far you haven't lost any points today!`})
                 }else if (res.data.nottodos.length>=1) {
-             this.setState({message:`Sorry ${loginkid}, unfortunately you got some minus points today, you can find more details inside the report center`})       
+             this.setState({message:`Sorry ${loginkid}, unfortunately you lost some points today, you can find more details inside the report center`})       
                 }
             })
             .catch((err) => { throw err })

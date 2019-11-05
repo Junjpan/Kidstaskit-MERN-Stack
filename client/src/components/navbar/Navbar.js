@@ -37,7 +37,7 @@ class Navbar extends Component {
                     <li className="title">KIDS TASK IT</li>
                     {this.props.info.parentslogin?<li><Link to="/user" className="link">User |</Link> </li>:null}                    
                     <li><Link to="/todo" className="link">To Do List |</Link> </li> 
-                    <li><Link to="/nottodo" className="link">Not To Do List |</Link></li>
+                    <li><Link to="/nottodo" className="link">Rules |</Link></li>
                     <li><Link to="/report/" className="link">Report |</Link></li>                   
                     {this.props.info.parentslogin?<li><Link to="/shopping/add" className="link">Shopping Center |</Link></li>:<li><Link to={`/shopping/${this.props.info.loginKidid}`} className="link">Shopping Center |</Link></li>}
                     <li><Link to="/aboutus" className="link">About Us |</Link></li>

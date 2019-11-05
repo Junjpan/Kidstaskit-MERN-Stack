@@ -42,7 +42,7 @@ export class ReportNotTodo extends Component {
     save = () => {
 
         if (this.props.kid === 'Your Kids:') {
-            this.setState({ message: "Please make sure you pick your kids name first before you save the list." });
+            this.setState({ message: "Please make sure you pick your child's name first before you save the list." });
             setTimeout(() => (this.setState({ message: '' })), 2000);
         } else if (this.state.nottodolists.length === 0) {
             alert('There are nothing to save')

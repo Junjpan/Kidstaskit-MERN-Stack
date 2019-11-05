@@ -25,7 +25,7 @@ router.post('/:kidid', (req, res) => {
         kid.todo.push(...todosIdArray);
         kid.save();
     })
-    res.send(`${kidname} Todo list has been saved!`)
+    res.send(`${kidname} To do list has been saved!`)
     //
 })
 
@@ -37,15 +37,15 @@ router.get("/search", (req, res) => {
     const thismonth = new Date().getMonth() + 1;
     const thisyear = new Date().getFullYear();
     const thisday = new Date().getDate();
-    const currentTime = Number(new Date(`${thismonth}/${thisday}/${thisyear}`));
+    const currentTime = Number(new Date(`${thismonth}/${thisday}/${thisyear}`))-24*60*60*1000;
     const TimeOneDayafter = Time + 24 * 60 * 60 * 1000;
     const Dayafter = new Date(TimeOneDayafter);
     //console.log(Time,currentTime);
     //console.log(date,kidId);
     if (kidId === '') {
-        res.status(400).send("Error:No kid's name found,please make sure you select one of your kid before import")
+        res.status(400).send("Error:No kid's name found, please make sure you select a child before you press the import button")
     } else if (kidslogin === "true" & Time < currentTime) {
-        res.status(400).send("Sorry, you only can pick the todo list for either today or days after")
+        res.status(400).send("Sorry, you no longer have the right to import the list from this date")
     }
     else {
         //console.log(date,Dayafter)
@@ -56,15 +56,15 @@ router.get("/search", (req, res) => {
         Todo.find(query, (err, todos) => {
             if (err) { throw err }
             else if (todos.length === 0) {
-                res.status(400).send("No todo list on this date.")
+                res.status(400).send("No to do list on this date.")
             }
             else {//only send the todo list which completed is false
                 if (kidslogin === "true") {
                     var incompleted = todos.filter((todo) => {
                         return todo.completed === false;
                     })
-                   // console.log(incompleted)
-                    if (incompleted.length === 0) { res.status(400).send("Congratulations! You have no more todo list today!") }
+                  // console.log(incompleted)
+                    if (incompleted.length === 0) { res.status(400).send("Congratulations! You have no more to do list today!") }
                     else { res.status(200).json({ todos: incompleted }) }
                 } else {
                     res.status(200).json({
@@ -88,7 +88,7 @@ router.put('/kid', (req, res) => {
           data.save();
         })
     })
-    res.send(`Great Job ${todos[0].kidname}, Keep up the good works, you can find out how many points you make so far in the report center!`)
+    res.send(`Great Job ${todos[0].kidname}, Keep up the good work, you can find out how many points you make so far in the report center!`)
 })
 
 router.get('/kid/:kidid',(req,res)=>{   

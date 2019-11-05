@@ -86,7 +86,7 @@ async  pickKid(e) {
             <div >
                 <br/>
                 <br/>
-                <h1 className="title">Not Todo List</h1>
+                <h1 className="title">Rules</h1>
                 <div style={{marginLeft: "50px"}}><DatePicker className="calendar1" selected={this.state.date} onChange={this.handleChange} /></div><br/>
                 <div>  
                 {this.state.kidslogin===false?(<div>    
@@ -100,8 +100,8 @@ async  pickKid(e) {
                 <button className="general_rules_button" onClick={this.addRules}>Add/Edit General Guides</button>            
                 <div className="normal" style={{float:"right",marginRight:"20%",color:"black"}}>
                     Instructions: <br/>
-                    1. Use button(Add/Edit general guides) to set up general rules/guides for your Kids to follow.<br/>
-                    2. When the kid doesn't follow the rules or break the rules, you can select s/his name to minus s/his points.
+                    1. Use the "Add/Edit General Guides" button to set general rules/standards for your Kids to follow.<br/>
+                    2. When your child breaks your rules, you can select his/her name to substract points.
                 </div></div>):(<KidView  info={this.state} />)} 
                 <Motion style={{z:spring(this.state.rulepanel?0:-100) ,opacity:spring(this.state.rulepanel?1:0)}}>
                     {(currentStyles)=>(

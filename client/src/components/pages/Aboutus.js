@@ -9,12 +9,8 @@ function Aboutus(){
            <br />
            <h1 className="title">About US</h1>
            <div className='aboutus'>
-           <p>This is the webApp mainly designed for families who are interested in encouraging
-            their kids to do the right things and try to help their kids to be more organized,work hard
-            and minimize using their electornic devices.</p>
-           <p>Kids would like to join this app because they can get award and prizes from their parents or shopping with their points</p>
-           <p>This is the Version 1.0.0, it is simply to use and it is totally free.Parents can set up any rules and points for their kids. 
-            If there are any improvements you would like to share with us or any function you would like us to add on. please feel free to reach us @ elisepjj@hotmail.com.</p> 
+           <p>Kidstaskit is a simple yet effective webApp that targets families who want to help their kids focus and target in on important school work and chores that need to be done. By doing so, children can be more focused and on task throughout the week, effectively making them better stewards of their time. Our webApp also allows near-infinite customization (for tasks and rewards) and includes a reward system in which parents can rewards hard work and kids can have fun spending their points earned.</p>
+           <p>Kidstaskit is currently in version 1.0.0  and is 100% free. Parents can easily setup an account with all the current features listed above. If there are any questions, concerns, bugs, or just overall improvements we can make on our site, feel free to contact us at elisepjj@hotmail.com.</p> 
             </div>
         <br/>
         <br/>

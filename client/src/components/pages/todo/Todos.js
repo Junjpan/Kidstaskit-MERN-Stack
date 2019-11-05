@@ -37,7 +37,7 @@ class Todos extends Component {
         finish: false,
         date: new Date(),
         message: "",
-        kidmsg: "Welcome back! Happy to see you again, pick the date and use import button to retrieve the todo list your parents made for you, The more you finish, the more points you can gain. Don't forget to mark the completed box once you finish the job. Of course, watch out the not todo list, they can minus your points. You can run the report all the times in the report center. Find out how many points you make at the end of the month, Your parents may have some surprise for you :)."
+        kidmsg: "Welcome back! Happy to see you again, pick the date and use import button to retrieve the todo list your parents made for you, The more you do, the more points you can make. Don't forget to mark the completed box once you finish the job. Of course, watch out the rules your parents made for you, they can subtract your points. You can run the report all the times in the report center."
     }
 
 
@@ -234,7 +234,7 @@ class Todos extends Component {
                 <div>
                     <Addtodo addTodo={this.addTodo.bind(this)} />
                     <Spreadsheet todoInfo={this.state} cancel={this.cancel} />
-                    <p className="normal" style={{ color: "red", fontSize: "15px" }}>**Please make sure pick you kid's name first before set up the to do list or import the old list!</p>
+                    <p className="normal" style={{ color: "red", fontSize: "15px" }}>**Please pick your child's name before set up a to do list or import the old to do list!</p>
                     <p className="normal" style={{ color: "red", fontSize: "15px" }}>**You can pick the date and use import button to import the old to do list as your current to do list and edit it.</p>
                     <div style={{ display: "flex", justifyContent: "space-evenly" }}>
                         <div className="todoBackground" >

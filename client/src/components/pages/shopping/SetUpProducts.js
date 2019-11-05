@@ -177,7 +177,7 @@ export class SetUpProducts extends Component {
                             {this.state.editstatus === false ? (<div>
                                 <div className="product_image_outer1"><img alt="product_image" src="https://www.freeiconspng.com/uploads/no-image-icon-8.png" className='product_img' ></img></div>
                                 <form className="add_product_form" onSubmit={this.addProduct}>
-                                    <label>Enter your image url in the below input area to upload product image.</label>
+                                    <label>(Optional) If you want to add a picture for the product, change the image url below.</label>
                                     <input type="text" name="imageurl" value={this.state.imageurl} onChange={this.change} placeholder="Input image url(such as:https://www....)." style={{ width: "400px" }}></input><br />
                                     <input type="text" name="description" value={this.state.description} onChange={this.change} placeholder="Product description(such as cash price $5.00, use ipad for an hr...)" style={{ width: "400px" }} required></input>  <br />
                                     <input type="number" name="price" value={this.state.price} onChange={this.change} placeholder="Input Product Unit Price(points)" style={{ width: "300px" }} min="1" required></input>&nbsp;<label>points</label><br />

@@ -8,8 +8,8 @@ export class Details extends Component {
         return (
             <div>
                 <p style={{textDecoration:"underline",textAlgin:"left"}}>From:{getdate(details.startdate.toString())}&nbsp;To:{getdate(details.enddate.toString())}</p>
-                <p>You totally make <span style={{color:"blue"}}>{details.sum}</span> points</p>
-                <p>You totally have <span style={{color:"red"}}>{details.nottodosum}</span> points</p>
+                <p>You have made <span style={{color:"blue"}}>{details.sum}</span> points</p>
+                <p>You have lost <span style={{color:"red"}}>{details.nottodosum}</span> points</p>
             </div>
         )
     }

@@ -66,17 +66,17 @@ class AddRule extends Component {
     render(){
         return (
             <div>
-                <div className="msg" style={{ fontSize: "15px", textAlign: "right", marginRight:"10px" ,color: "red"}}>{this.state.message}</div>
+                <div className="msg" style={{ fontSize: "15px", textAlign: "right", marginRight:"10px" ,color: "red"}}>{this.state.message}</div>               
                 <form className="form_add_rule" name="myForm" onSubmit={this.save} >
                     <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.changeValue}></input><br/>
                     <textarea value={this.state.rules} name="rules" onChange={this.changeValue} placeholder="Enter your not todo list (example: Rude to parents -50 pts/time)" type="text" ></textarea>
-                    <div style={{width:"150px",float:"right" }}>
+                    <div className="addRule_buttons">
                     <input type="button" className="button" value="Close" onClick={this.close}/><br/>    
                     <input type="button" className="button" value="Edit"  onClick={this.edit}/><br/>
                     <input type="button" className="button" value="Download" onClick={this.html2PDF} /><br/>  
                     <input type="submit" className="button" value="Save" />
-                    </div>
-                    <p style={{color:"red"}}>** Note: please make sure there is one line gap between each paragraph.</p>
+                    </div> 
+                    <p style={{color:"red"}}>** Note: You should add space each rule out by 1 line.</p> 
                 </form>    
             </div>
         )

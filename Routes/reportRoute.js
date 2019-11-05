@@ -19,7 +19,7 @@ route.get('/:kidid', (req, res) => {
     date: { $gte: start, $lt: onedayafterendday }
   }
   if (start.getTime() > end.getTime()) {
-    res.status(400).send("Please make sure the begin date either smaller or equal the end date.")
+    res.status(400).send("Please make sure the start date either smaller or equal the end date.")
   } else {
 
     Todo.find(query)
